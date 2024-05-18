@@ -1,0 +1,23 @@
+<%- include("partials/header.ejs") %>
+
+<!-- Display success message if available -->
+<% if (typeof message !== 'undefined') { %>
+    <div class="alert alert-success"><%= message %></div>
+<% } %>
+
+<% posts.forEach(post => { %>
+    <div class="blog-post">
+        <h2><%= post.title %></h2>
+        <h3><%= post.subject %></h3>
+        
+        <a href="/blog1/<%= post.id %>">Read More</a>
+        <hr style="border-color: black;"> <!-- Apply black color to hr line -->
+
+    </div>
+<% }) %>
+
+<!-- Button at the end of blogs -->
+<a href="/getstart" class="btn btn-primary">Create New Blog</a>
+
+<%- include("partials/footer.ejs") %>
+
